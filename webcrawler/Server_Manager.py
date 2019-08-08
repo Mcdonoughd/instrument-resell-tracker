@@ -11,7 +11,6 @@ Manages packages sent from a website
 from flask import Flask
 from flask import request
 import json
-from flask import jsonify
 import time
 from Job_Manager import JobManager
 from Job_Cleaner import JobCleaner
@@ -35,8 +34,8 @@ def Job_Request():
     cleandata = cleaner.cleanJob(data)  # Clean Job
 
     # In new thread, send to job manager
-    # job_thread = Thread(target=JobManager.createJob(cleandata), name='Thread-JobManager', daemon=False)
-    # job_thread.start()
+    job_thread = Thread(target=JobManager.createJob(cleandata), name='Thread-JobManager', daemon=False)
+    job_thread.start()
 
     # send the cleaned data to the crawler manager
     result = Crawler.RunCrawlers(cleandata)

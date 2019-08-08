@@ -34,13 +34,13 @@ class CrawlerManager:
     def RunCrawlers(self,jsondata):
         ebay = Thread(target=self.RunEbay, args=(jsondata, ), name='Ebay_Crawler')
         ebay.start()
-        # ebay.join()
+        ebay.join()
         result = self.Result_queue.get()
 
         print(result)
 
-        # addata = Thread(target=self.sendtoDB,args=(result, ), name='Instrument_DB')
-        # addata.start()
+        addata = Thread(target=self.sendtoDB,args=(result, ), name='Instrument_DB')
+        addata.start()
 
 
         return result
