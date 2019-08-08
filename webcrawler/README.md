@@ -1,5 +1,4 @@
 # instrument-resell-tracker
-### by Daniel McDonough 8/9/19
 
 ---
 This program searches resell platforms periodically to assist in finding stolen instruments
@@ -17,12 +16,12 @@ This program searches resell platforms periodically to assist in finding stolen 
 `python3 Client.py`
 
 
-Example output:
+### Example output:
 
 
 > {"item": [{'url': 'https://www.ebay.com/itm/Gibson-ES-175-1987-Natural-/173986965113', 'category': 'Electric Guitars', 'location': 'Woodside,NY,USA', 'image': 'https://thumbs2.ebaystatic.com/m/mjzz9ndAGyus9En06u3Zgqg/140.jpg', 'make': 'Gibson', 'title': 'Gibson ES-175 1987 Natural', 'year': 1987, 'endTime': 63736869600000, 'model': 'ES-175 '}]}
 
-## How it works
+### How it works
 ![Workflow](./workflow.png)
 
 
